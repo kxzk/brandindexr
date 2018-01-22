@@ -8,7 +8,7 @@ Install from Github
 devtools::install_github('beigebrucewayne/brandindexr')
 ```
 
-## Workflow
+#### Authentication
 
 You need to authenticate yourself first, therefore run `bi_auth()` with your email and password. After that, you are free to start querying the API.
 ```r
