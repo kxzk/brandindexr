@@ -8,10 +8,6 @@
 #'
 #' @return A tibble containing cookie information.
 #'
-#' @examples
-#' /dontrun(
-#' bi_auth("some.dude@company.com", "hello1234")
-#' )
 #' @export
 bi_auth <- function(email, password, endpoint = "login") {
   input <- c(email, password)

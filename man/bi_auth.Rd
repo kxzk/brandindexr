@@ -19,8 +19,3 @@ A tibble containing cookie information.
 \description{
 Simple login authentication to the YouGov BrandIndex API.
 }
-\examples{
-/dontrun(
-bi_auth("some.dude@company.com", "hello1234")
-)
-}
