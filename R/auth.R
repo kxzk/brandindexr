@@ -18,8 +18,18 @@ bi_auth <- function(email, password, endpoint = "login") {
 
   response <- httr::POST(url_auth)
   httr::stop_for_status(response)
-  res <- response$cookies
 
-  cookies_tbl <- tibble::as_tibble(res)
-  cookies_tbl
+  sucess <- glue::glue("
+
+                       =============== SUCCESS: YOU'RE LOGGED IN ===============
+
+                       Try a couple of quick queries to make sure everything is
+                       functioning.
+
+                       company_defaults()
+
+                       metrics()
+
+                       ")
+  print(sucess)
 }
