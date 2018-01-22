@@ -22,6 +22,13 @@ In order to run multi-brand timelines you'll need to specify multiple brands in 
 multi_brand_timeline(“us:1023:1000575&brand=us:1023:1000564&brand=us:1023:1000562”, start_date = “2017-10-11”, end_date = “2017-11-11”, scoring = “total”)
 ```
 
+#### Multiple Filters for Multi-Brand Timeline
+
+The key is to place a `/` after the colon of each demographic filter, like below:
+```r
+multi_brand_timeline('us:12:12001:/bixdemo_top60dmas2.1:/bixdemo_top60dmas2.2&brand=us:12:12005:/bixdemo_top60dmas2.1:/bixdemo_top60dmas2.2','2017-01-01','2017-02-01', 'total','16')
+```
+
 #### Viewing All Demographic Filters
 
 To see all demographic filters in a region follow the recipe below:
