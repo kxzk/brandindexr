@@ -1,7 +1,4 @@
-# brandIndexR
-R interface to the YouGov BrandIndex API
-
-![brandindexr](https://i.imgur.com/1xMMvq1.png)
+<center><img src="https://i.imgur.com/1xMMvq1.png"></center>
 
 ## Installation
 
