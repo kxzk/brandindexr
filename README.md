@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/beigebrucewayne/datoramar.svg?branch=master)](https://travis-ci.org/beigebrucewayne/datoramar)
 ![brandindexr](https://i.imgur.com/1xMMvq1.png)
 
 ## Installation
