@@ -11,6 +11,5 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports: httr,
-  jsonlite,
-  tibble,
+  tidyverse,
   glue
