@@ -1,4 +1,4 @@
-<center><img src="https://i.imgur.com/1xMMvq1.png"></center>
+![brandindexr](https://i.imgur.com/1xMMvq1.png)
 
 ## Installation
 
