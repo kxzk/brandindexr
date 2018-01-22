@@ -14,7 +14,7 @@ demo_filters(region, sector = NULL, custom_sector = NULL,
 
 \item{custom_sector}{A number of the custom sector for which the demographic filters should be listed.}
 
-\item{endpoint}{}
+\item{endpoint}{A string containing the appropriate endpoint.}
 }
 \value{
 A list of demographic filters.

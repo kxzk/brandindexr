@@ -42,7 +42,7 @@ company_sectors <- function(region,
                             inactive = 0,
                             endpoint = "company/sectors?region=") {
   url <- url_builder(endpoint)
-  url_region <- glue("{url}{region}&{custom}&{inactive}")
+  url_region <- glue::glue("{url}{region}&{custom}&{inactive}")
   get_and_clean(url_region)$data
 }
 
@@ -56,7 +56,7 @@ company_sectors <- function(region,
 #' @export
 company_custom_sectors <- function(region, endpoint = "company/custom-sectors") {
   url <- url_builder(endpoint)
-  url_sectors <- glue("{url}?region={region}")
+  url_sectors <- glue::glue("{url}?region={region}")
   get_and_clean(url_sectors)$data
 }
 
@@ -72,7 +72,7 @@ company_custom_sectors <- function(region, endpoint = "company/custom-sectors") 
 #' @param sector A number containing the sector for which the brands should be listed.
 #' @param custom_sector A number for the custom sector for which brands should be listed.
 #' @param inactive A number value to return inactive brands as well (default: 0, 1)
-#' @param endpoint
+#' @param endpoint A string containing the appropriate endpoint.
 #'
 #' @return A list of brands accessibly by your company, by region and sector.
 #' @export
@@ -84,9 +84,9 @@ company_brands <- function(region,
   url <- url_builder(endpoint)
 
   if (!is.null(sector)) {
-    url_brands <- glue("{url}?region={region}&sector={sector}")
+    url_brands <- glue::glue("{url}?region={region}&sector={sector}")
   } else {
-    url_brands <- glue("{url}?region={region}&custom_sector={custom_sector}")
+    url_brands <- glue::glue("{url}?region={region}&custom_sector={custom_sector}")
   }
 
   get_and_clean(url_brands)$data

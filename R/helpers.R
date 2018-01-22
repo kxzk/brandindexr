@@ -25,6 +25,6 @@ get_and_clean <- function(url) {
 #' @return A url with the base url and endpoint appended.
 #' @export
 url_builder <- function(endpoint) {
-  base_url <- glue("https://api.brandindex.com/v0/{endpoint}")
+  base_url <- glue::glue("https://api.brandindex.com/v0/{endpoint}")
   return(base_url)
 }

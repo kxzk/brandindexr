@@ -10,7 +10,7 @@
 #' @export
 sectors_with_brands <- function(region, endpoint = "taxonomy/sectors-with-brands.csv?") {
   url <- url_builder(endpoint)
-  url_sect_brand <- glue("{url}region={region}")
+  url_sect_brand <- glue::glue("{url}region={region}")
 
   response <- httr::GET(url_sect_brand)
   response <- httr::content(response)
@@ -34,6 +34,6 @@ brand_data <- function(region,
                        brand,
                        endpoint = "taxonomy/brand.json") {
   url <- url_builder(endpoint)
-  url_brand <- glue("{url}?region={region}&sector={sector}&brand={brand}")
+  url_brand <- glue::glue("{url}?region={region}&sector={sector}&brand={brand}")
   get_and_clean(url_brand)
 }

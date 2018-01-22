@@ -14,7 +14,7 @@ bi_auth <- function(email, password, endpoint = "login") {
   if (!is.character(input)) { stop("EXPECTED TYPES: (email: str, password: str)") }
 
   url <- url_builder(endpoint)
-  url_auth <- glue("{url}?email={email}&password={password}")
+  url_auth <- glue::glue("{url}?email={email}&password={password}")
 
   response <- httr::POST(url_auth)
   httr::stop_for_status(response)

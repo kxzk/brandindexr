@@ -16,7 +16,7 @@ company_brands(region, sector = NULL, custom_sector = NULL, inactive = 0,
 
 \item{inactive}{A number value to return inactive brands as well (default: 0, 1)}
 
-\item{endpoint}{}
+\item{endpoint}{A string containing the appropriate endpoint.}
 }
 \value{
 A list of brands accessibly by your company, by region and sector.

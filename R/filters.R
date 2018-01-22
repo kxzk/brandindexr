@@ -8,7 +8,7 @@
 #' @param region A string for which the demographic filters should be listed.
 #' @param sector A number of the sector for which the demographic filtes should be listed.
 #' @param custom_sector A number of the custom sector for which the demographic filters should be listed.
-#' @param endpoint
+#' @param endpoint A string containing the appropriate endpoint.
 #'
 #' @return A list of demographic filters.
 #' @export
@@ -21,11 +21,11 @@ demo_filters <- function(region,
   if (!is.null(sector) && !is.null(custom_sector)) {
     stop("CHOOSE ONE: either sector or custom_sector")
   } else if (!is.null(sector)) {
-   url_filters <- glue("{url}?region={region}&sector={sector}")
+   url_filters <- glue::glue("{url}?region={region}&sector={sector}")
   } else if (!is.null(custom_sector)) {
-   url_filters <- glue("{url}?region={region}&custom_sector={custom_sector}")
+   url_filters <- glue::glue("{url}?region={region}&custom_sector={custom_sector}")
   } else {
-   url_filters <- glue("{url}?region={region}")
+   url_filters <- glue::glue("{url}?region={region}")
   }
 
   get_and_clean(url_filters)
@@ -46,7 +46,7 @@ demo_filter <- function(region,
                         name,
                         endpoint = "filters/demo") {
   url <- url_builder(endpoint)
-  url_filter <- glue("{url}?region={region}&name={name}")
+  url_filter <- glue::glue("{url}?region={region}&name={name}")
   get_and_clean(url_filter)
 }
 

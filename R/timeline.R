@@ -39,7 +39,7 @@ timeline_brands <- function(brand,
                             moving_average = 1,
                             endpoint = "timeline/brands") {
   url <- url_builder(endpoint)
-  url_timeline <- glue("{url}?brand={brand}&start_date={start_date}&end_date={end_date}&moving_average={moving_average}&scoring={scoring}")
+  url_timeline <- glue::glue("{url}?brand={brand}&start_date={start_date}&end_date={end_date}&moving_average={moving_average}&scoring={scoring}")
 
   # Set Accept header to blank in order to force CSV format.
   # Otherwise, the API will return JSON.
@@ -82,13 +82,13 @@ single_brand_timeline <- function(region,
   url <- url_builder(endpoint)
 
   if (!is.null(filters) && !is.null(metrics)) {
-    url_single_timeline <- glue("{url}?moving_average={moving_average}&end_date={end_date}&scoring={scoring}&brand_id={brand_id}&region={region}&start_date={start_date}&sector={sector}&filters={filters}&metrics={metrics}")
+    url_single_timeline <- glue::glue("{url}?moving_average={moving_average}&end_date={end_date}&scoring={scoring}&brand_id={brand_id}&region={region}&start_date={start_date}&sector={sector}&filters={filters}&metrics={metrics}")
   } else if (is.null(filters) && is.null(metrics)) {
-    url_single_timeline <- glue("{url}?moving_average={moving_average}&end_date={end_date}&scoring={scoring}&brand_id={brand_id}&region={region}&start_date={start_date}&sector={sector}")
+    url_single_timeline <- glue::glue("{url}?moving_average={moving_average}&end_date={end_date}&scoring={scoring}&brand_id={brand_id}&region={region}&start_date={start_date}&sector={sector}")
   } else if (is.null(filters)) {
-    url_single_timeline <- glue("{url}?moving_average={moving_average}&end_date={end_date}&scoring={scoring}&brand_id={brand_id}&region={region}&start_date={start_date}&sector={sector}&metrics={metrics}")
+    url_single_timeline <- glue::glue("{url}?moving_average={moving_average}&end_date={end_date}&scoring={scoring}&brand_id={brand_id}&region={region}&start_date={start_date}&sector={sector}&metrics={metrics}")
   } else {
-    url_single_timeline <- glue("{url}?moving_average={moving_average}&end_date={end_date}&scoring={scoring}&brand_id={brand_id}&region={region}&start_date={start_date}&sector={sector}&filters={filters}")
+    url_single_timeline <- glue::glue("{url}?moving_average={moving_average}&end_date={end_date}&scoring={scoring}&brand_id={brand_id}&region={region}&start_date={start_date}&sector={sector}&filters={filters}")
   }
 
   data <- get_and_clean(url_single_timeline)
@@ -131,7 +131,7 @@ multi_brand_timeline <- function(brand,
                                  period_size = 1,
                                  endpoint = "timeline/multi-brand-file.csv") {
   url <- url_builder(endpoint)
-  url_multi <- glue("{url}?scoring={scoring}&start_date={start_date}&end_date={end_date}&moving_average={moving_average}&period_type={period_type}&period_size={period_size}&brand={brand}")
+  url_multi <- glue::glue("{url}?scoring={scoring}&start_date={start_date}&end_date={end_date}&moving_average={moving_average}&period_type={period_type}&period_size={period_size}&brand={brand}")
 
   get_and_clean(url_multi)
 
@@ -176,9 +176,9 @@ multi_sector_timeline <- function(sector,
   url <- url_builder(endpoint)
 
   if (!is.null(custom_sector)) {
-    url_sector <- glue("{url}?scoring={scoring}&start_date={start_date}&end_date={end_date}&moving_average={moving_average}&period_type={period_type}&period_size={period_size}&custom_sector={custom_sector}")
+    url_sector <- glue::glue("{url}?scoring={scoring}&start_date={start_date}&end_date={end_date}&moving_average={moving_average}&period_type={period_type}&period_size={period_size}&custom_sector={custom_sector}")
   } else {
-    url_sector <- glue("{url}?scoring={scoring}&start_date={start_date}&end_date={end_date}&moving_average={moving_average}&period_type={period_type}&period_size={period_size}&sector={sector}")
+    url_sector <- glue::glue("{url}?scoring={scoring}&start_date={start_date}&end_date={end_date}&moving_average={moving_average}&period_type={period_type}&period_size={period_size}&sector={sector}")
   }
 
   get_and_clean(url_sector)
