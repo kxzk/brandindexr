@@ -10,7 +10,7 @@ devtools::install_github('beigebrucewayne/brandindexr')
 
 ## Workflow
 
-You need to authenticate yourself first, therefore run `bi_auth()` with your email and password.
+You need to authenticate yourself first, therefore run `bi_auth()` with your email and password. After that, you are free to start querying the API.
 ```r
 bi_auth("your.email@company.com", "yourpassword")
 ```
