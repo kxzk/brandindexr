@@ -47,8 +47,3 @@ can also provide multiple values for each filter; to do so, just put the numeric
 fitler values as the \code{filter_value} part separated by a comma (",").
 For example: \code{:/brand.1234.buzz.1,2/brand.2345.quality.9}.
 }
-\examples{
-\dontrun(
-"https://api.brandindex.com/v0/timeline/brands?brand=foo:123:1234:/brand.3456.reputation.1&brand=bar:234:2345:/foo_filter.1/bar_filter.2&start_date=2001-01-01&end_date=2015-02-20&moving_average=4&scoring=opinion"
-)
-}
