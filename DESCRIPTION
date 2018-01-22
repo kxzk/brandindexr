@@ -1,0 +1,16 @@
+Package: brandIndexR
+Type: Package
+Title: Interface to the YouGov 'BrandIndex' API
+Version: 0.1.0
+Authors@R: person("Kade", "Killary", email = "kadekillary@protonmail.com",
+  role = c("aut", "cre"))
+URL: https://github.com/beigebrucewayne/brandindexr
+BugReports: https://github.com/beigebrucewayne/brandindexr/issues
+Description: Thin wrapper around the YouGov 'BrandIndex' API.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports: httr,
+  jsonlite,
+  tibble,
+  glue
