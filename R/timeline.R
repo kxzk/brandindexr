@@ -109,7 +109,7 @@ single_brand_timeline <- function(region,
 #'
 #' @param brand A string of the format \code{region:sector_id:brand_id[:demo_filters][:metric_filters]}.
 #' Can be provided multiple times - if so, multiple brands will be listed in the
-#' response data.
+#' response data and will look like the following ("us:1023:1000575&brand=us:1023:1000564").
 #' @param start_date A string in the format \code{YYYY-MM-DD}.
 #' @param end_date A string in the format \code{YYYY-MM-DD}.
 #' @param scoring A string containing the scoring option to use (default: "total", "aware", "opinion").

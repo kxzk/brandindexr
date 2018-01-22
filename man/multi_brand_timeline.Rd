@@ -11,7 +11,7 @@ multi_brand_timeline(brand, start_date, end_date, scoring, moving_average = 1,
 \arguments{
 \item{brand}{A string of the format \code{region:sector_id:brand_id[:demo_filters][:metric_filters]}.
 Can be provided multiple times - if so, multiple brands will be listed in the
-response data.}
+response data and will look like the following ("us:1023:1000575&brand=us:1023:1000564").}
 
 \item{start_date}{A string in the format \code{YYYY-MM-DD}.}
 
