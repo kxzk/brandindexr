@@ -1,12 +1,13 @@
-#' Title
+#' Sectors with Brands
 #'
-#' @param region
-#' @param endpoint
+#' This endpoint contains data that exposes the taxonomy of categories,
+#' brands, etc...
 #'
-#' @return
+#' @param region A string of the region for which the sectors should be listed.
+#' @param endpoint A string containing the appropriate endpoint.
+#'
+#' @return A tibble of sectors with their brands.
 #' @export
-#'
-#' @examples
 sectors_with_brands <- function(region, endpoint = "taxonomy/sectors-with-brands.csv?") {
   url <- url_builder(endpoint)
   url_sect_brand <- glue("{url}region={region}")
@@ -17,17 +18,17 @@ sectors_with_brands <- function(region, endpoint = "taxonomy/sectors-with-brands
   return(response)
 }
 
-#' Title
+#' Brand Data
 #'
-#' @param region
-#' @param sector
-#' @param brand
-#' @param endpoint
+#' This endpoint responds with a payload that describes a specific brand.
 #'
-#' @return
+#' @param region A string of the region for which the sectors should be listed.
+#' @param sector A number for the sector ID that the brand is tied to.
+#' @param brand A number for the brand ID that the brand is tied to.
+#' @param endpoint A string containing the appropriate endpoint.
+#'
+#' @return A list of data that describes a specific brand.
 #' @export
-#'
-#' @examples
 brand_data <- function(region,
                        sector,
                        brand,

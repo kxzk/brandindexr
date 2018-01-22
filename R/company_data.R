@@ -1,40 +1,42 @@
-#' Title
+#' Company Defaults
 #'
-#' @param endpoint
+#' This endpoint contains the default values used for your company's default
+#' region, sector and brand - which are used in a number of scenarios
+#' where either of them is not provided.
 #'
-#' @return
+#' @param endpoint A string containing the appropriate endpoint.
+#'
+#' @return A list of the company defaults.
 #' @export
-#'
-#' @examples
 company_defaults <- function(endpoint = "company/defaults") {
   url <- url_builder(endpoint)
   get_and_clean(url)$data
 }
 
-#' Title
+#' Company Regions
 #'
-#' @param endpoint
+#' This endpoint contains the regions accessible by your company.
 #'
-#' @return
+#' @param endpoint A string containing the appropriate endpoint.
+#'
+#' @return A list of regions accessible by your company.
 #' @export
-#'
-#' @examples
 company_regions <- function(endpoint = "company/region") {
   url <- url_builder(endpoint)
   get_and_clean(url)$data
 }
 
-#' Title
+#' Company Sectors
 #'
-#' @param region
-#' @param custom
-#' @param inactive
-#' @param endpoint
+#' This endpoint contains the sectors by your company, by region.
 #'
-#' @return
+#' @param region A string for which the sectors should be listed.
+#' @param custom A number value to return expired sectors (default: 0, 1)
+#' @param inactive A number value to return custom sectors (default: 0, 1)
+#' @param endpoint A string containing the appropriate endpoint.
+#'
+#' @return A list of sectors by region.
 #' @export
-#'
-#' @examples
 company_sectors <- function(region,
                             custom = 0,
                             inactive = 0,
@@ -44,33 +46,36 @@ company_sectors <- function(region,
   get_and_clean(url_region)$data
 }
 
-#' Title
+#' Company Custom Sectors
 #'
-#' @param region
-#' @param endpoint
+#' @param region A string containing the region for which custom sectors
+#' should be listed.
+#' @param endpoint A string containing the appropriate endpoint.
 #'
-#' @return
+#' @return A list of regions for which the custom sectors should be listed.
 #' @export
-#'
-#' @examples
 company_custom_sectors <- function(region, endpoint = "company/custom-sectors") {
   url <- url_builder(endpoint)
   url_sectors <- glue("{url}?region={region}")
   get_and_clean(url_sectors)$data
 }
 
-#' Title
+#' Company Brands
 #'
-#' @param region
-#' @param sector
-#' @param custom_sector
-#' @param inactive
+#' This endpoint contains the brands accessibel by your company, by region
+#' and sector.
+#'
+#' You may list brands by either \emph{sector} or \emph{custom_sector},
+#' but not both.
+#'
+#' @param region A string containing the region for which the brand should be listed.
+#' @param sector A number containing the sector for which the brands should be listed.
+#' @param custom_sector A number for the custom sector for which brands should be listed.
+#' @param inactive A number value to return inactive brands as well (default: 0, 1)
 #' @param endpoint
 #'
-#' @return
+#' @return A list of brands accessibly by your company, by region and sector.
 #' @export
-#'
-#' @examples
 company_brands <- function(region,
                            sector = NULL,
                            custom_sector = NULL,

@@ -1,11 +1,13 @@
-#' Title
+#' Cleaning HTTP GET Requests
 #'
-#' @param url
+#' This function sends a GET request to the appropriate URL.
+#' Next, it checks the response and grabs the GET request's
+#' content.
 #'
-#' @return
+#' @param url A string of the url to send the GET request to.
+#'
+#' @return A response from the GET request (list, tibble, error)
 #' @export
-#'
-#' @examples
 get_and_clean <- function(url) {
   response <- httr::GET(url)
   httr::stop_for_status(response)
@@ -14,14 +16,14 @@ get_and_clean <- function(url) {
   return(res)
 }
 
-#' Title
+#' Building Up The URL
 #'
-#' @param endpoint
+#' This function holds the base url and takes one endpoint.
 #'
-#' @return
+#' @param endpoint A string of the endpoint to query.
+#'
+#' @return A url with the base url and endpoint appended.
 #' @export
-#'
-#' @examples
 url_builder <- function(endpoint) {
   base_url <- glue("https://api.brandindex.com/v0/{endpoint}")
   return(base_url)

@@ -1,13 +1,18 @@
-#' Title
+#' Simple Authentication
 #'
-#' @param email
-#' @param password
-#' @param endpoint
+#' Simple login authentication to the YouGov BrandIndex API.
 #'
-#' @return
-#' @export
+#' @param email A string containing your email used to login.
+#' @param password A string containing your password used to login.
+#' @param endpoint A string containing the appropriate endpoint.
+#'
+#' @return A tibble containing cookie information.
 #'
 #' @examples
+#' /dontrun(
+#' bi_auth("some.dude@company.com", "hello1234")
+#' )
+#' @export
 bi_auth <- function(email, password, endpoint = "login") {
   input <- c(email, password)
   if (!is.character(input)) { stop("EXPECTED TYPES: (email: str, password: str)") }

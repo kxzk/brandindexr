@@ -1,14 +1,17 @@
-#' Title
+#' Demographic Filters
 #'
-#' @param region
-#' @param sector
-#' @param custom_sector
+#' This endpoint contains the demographic filters that your company
+#' is able to use.
+#'
+#' The \emph{sector} and \emph{custom_sector} are mutually exclusive.
+#'
+#' @param region A string for which the demographic filters should be listed.
+#' @param sector A number of the sector for which the demographic filtes should be listed.
+#' @param custom_sector A number of the custom sector for which the demographic filters should be listed.
 #' @param endpoint
 #'
-#' @return
+#' @return A list of demographic filters.
 #' @export
-#'
-#' @examples
 demo_filters <- function(region,
                          sector = NULL,
                          custom_sector = NULL,
@@ -29,16 +32,16 @@ demo_filters <- function(region,
 
 }
 
-#' Title
+#' Demographic Filter
 #'
-#' @param region
-#' @param name
-#' @param endpoint
+#' This endpoint contains the demographic filter description for a particular demographic filter required.
 #'
-#' @return
+#' @param region A string containing the region for which the demographic filter should be described.
+#' @param name A string containing the \emph{name} for the demographic filter to be described.
+#' @param endpoint A string containing the appropriate endpoint.
+#'
+#' @return A list of filter descriptions for a particular demographic filter.
 #' @export
-#'
-#' @examples
 demo_filter <- function(region,
                         name,
                         endpoint = "filters/demo") {
@@ -47,28 +50,15 @@ demo_filter <- function(region,
   get_and_clean(url_filter)
 }
 
-#' Title
+#' Metric Filters
 #'
-#' @param endpoint
+#' This endpoint contains the metric filters that your company is able to use.
 #'
-#' @return
+#' @param endpoint A string containing the appropriate endpoint.
+#'
+#' @return A list of metric filters.
 #' @export
-#'
-#' @examples
 metric_filters <- function(endpoint = "filters/metrics") {
   url <- url_builder(endpoint)
   get_and_clean(url)$meta
-}
-
-#' Title
-#'
-#' @param endpoint
-#'
-#' @return
-#' @export
-#'
-#' @examples
-metric_values <- function(endpoint = "filters/metrics") {
-  url_builder(endpoint)
-  get_and_clean(url)$data
 }
