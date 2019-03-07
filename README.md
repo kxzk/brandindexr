@@ -6,7 +6,7 @@
 
 Install from Github
 ```r
-devtools::install_github('beigebrucewayne/brandindexr')
+devtools::install_github('kadekillary/brandindexr')
 ```
 
 #### Authentication
