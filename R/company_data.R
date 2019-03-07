@@ -21,7 +21,7 @@ company_defaults <- function(endpoint = "company/defaults") {
 #'
 #' @return A list of regions accessible by your company.
 #' @export
-company_regions <- function(endpoint = "company/region") {
+company_regions <- function(endpoint = "company/regions") {
   url <- url_builder(endpoint)
   get_and_clean(url)$data
 }
