@@ -4,7 +4,7 @@
 \alias{company_regions}
 \title{Company Regions}
 \usage{
-company_regions(endpoint = "company/region")
+company_regions(endpoint = "company/regions")
 }
 \arguments{
 \item{endpoint}{A string containing the appropriate endpoint.}
