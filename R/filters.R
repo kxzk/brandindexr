@@ -62,3 +62,36 @@ metric_filters <- function(endpoint = "filters/metrics") {
   url <- url_builder(endpoint)
   get_and_clean(url)$meta
 }
+
+
+#' Composite Filters
+#' 
+#' This endpoint contains the composite filters that your company is able to use.
+#'
+#' @param region A string representing the region for which the composite filters should be listed.
+#' @param endpoint A string containing the appropriate endpoint.
+#'
+#' @return A list of composite filters.
+#' @export
+composite_filter <- function(region,
+                             endpoint = "filters/composite-filters") {
+  url <- url_builder(endpoint)
+  url_filter <- glue::glue("{url}?region={region}")
+  get_and_clean(url_filter)
+}
+
+#' Composite Filter
+#' 
+#' This endpoint describes a composite filter that your company is able to use.
+#'
+#' @param id A string containing the ID for which the composite filter should be described.
+#' @param endpoint A string containing the appropriate endpoint.
+#'
+#' @return An ID for the composite filter described.
+#' @export
+composite_filters <- function(id,
+                              endpoint = "filters/composite-filter") {
+  url <- url_builder(endpoint)
+  url_filter <- glue::glue("{url}?id={id")
+  get_and_clean(url_filter)
+}
