@@ -28,13 +28,13 @@ demo_filters <- function(region,
    url_filters <- glue::glue("{url}?region={region}")
   }
 
-  get_and_clean(url_filters)
+  get_and_clean(url_filters)$meta
 
 }
 
-#' Demographic Filter
+#' Demographic Filter Values
 #'
-#' This endpoint contains the demographic filter description for a particular demographic filter required.
+#' This endpoint contains the demographic filter values for a particular demographic filter.
 #'
 #' @param region A string containing the region for which the demographic filter should be described.
 #' @param name A string containing the \emph{name} for the demographic filter to be described.
@@ -42,12 +42,12 @@ demo_filters <- function(region,
 #'
 #' @return A list of filter descriptions for a particular demographic filter.
 #' @export
-demo_filter <- function(region,
+demo_filter_values <- function(region,
                         name,
                         endpoint = "filters/demo") {
   url <- url_builder(endpoint)
   url_filter <- glue::glue("{url}?region={region}&name={name}")
-  get_and_clean(url_filter)
+  get_and_clean(url_filter)$data
 }
 
 #' Metric Filters
@@ -77,7 +77,7 @@ composite_filter <- function(region,
                              endpoint = "filters/composite-filters") {
   url <- url_builder(endpoint)
   url_filter <- glue::glue("{url}?region={region}")
-  get_and_clean(url_filter)
+  get_and_clean(url_filter)$data
 }
 
 #' Composite Filter
@@ -92,6 +92,6 @@ composite_filter <- function(region,
 composite_filters <- function(id,
                               endpoint = "filters/composite-filter") {
   url <- url_builder(endpoint)
-  url_filter <- glue::glue("{url}?id={id")
-  get_and_clean(url_filter)
+  url_filter <- glue::glue("{url}?id={id}")
+  get_and_clean(url_filter)$data
 }
