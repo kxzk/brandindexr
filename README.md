@@ -52,7 +52,7 @@ The key is to place a `/` after the colon of each demographic filter, like below
 multi_brand_timeline('us:12:12001:/bixdemo_top60dmas2.1&brand=us:12:12001:/bixdemo_top60dmas2.2&brand=us:12:12005&brand=us:12:12001:/bixdemo_top60dmas2.1&brand=us:12:12001:/bixdemo_top60dmas2.2','2017-01-01','2017-02-01', 'total','16')
 ```
 
-#### Viewing All Demographic Filters
+#### Demographic Filters
 
 To see all demographic filters in a region follow the recipe below:
 ```r
@@ -61,4 +61,10 @@ filters <- demo_filters("us")
 
 # view all of them in RStudio
 View(filters)
+
+# describe demo filter
+values <- demo_filter_values("us", "nfl_interest_level")
+
+> values$text
+[1] "How interested, or not, are you in NFL (for example - watch on TV, listen to on radio, attend in-person, follow on internet or social media)?"
 ```
