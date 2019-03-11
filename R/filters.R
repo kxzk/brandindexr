@@ -73,7 +73,7 @@ metric_filters <- function(endpoint = "filters/metrics") {
 #'
 #' @return A list of composite filters.
 #' @export
-composite_filter <- function(region,
+composite_filters <- function(region,
                              endpoint = "filters/composite-filters") {
   url <- url_builder(endpoint)
   url_filter <- glue::glue("{url}?region={region}")
@@ -89,7 +89,7 @@ composite_filter <- function(region,
 #'
 #' @return An ID for the composite filter described.
 #' @export
-composite_filters <- function(id,
+composite_filter <- function(id,
                               endpoint = "filters/composite-filter") {
   url <- url_builder(endpoint)
   url_filter <- glue::glue("{url}?id={id}")
