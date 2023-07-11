@@ -8,7 +8,7 @@ Install from Github
 ```r
 install.packages('devtools')
 
-devtools::install_github('kadekillary/brandindexr')
+devtools::install_github('kxzk/brandindexr')
 ```
 
 #### Authentication
