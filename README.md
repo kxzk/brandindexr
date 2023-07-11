@@ -20,7 +20,8 @@ bi_auth("your.email@company.com", "yourpassword")
 
 #### Brand String Construction
 
-The brand strings are at the heart of `multi_brand_timeline` functions. However, they can be quite long and complex to compose. Therefore, in order to ease the cognitive load. One of the two approaches should be taken.
+The brand strings are at the heart of `multi_brand_timeline` functions. However, they can be quite long and complex to compose. Therefore, in order to ease the cognitive load, use one of the following two approaches:
+
 ```r
 # using Base R -> paste0()
 a <- 'us:12:12001:/bixdemo_stateresidence2.4'
